@@ -25,6 +25,10 @@ fi
 
 sudo cp -R $(pwd) /var/
 
+if [ -d "/var/fastCLI" ]; then
+    sudo mv /var/fastCLI /var/fast-cli
+fi
+
 # Remove existing files/dirs if they exist
 for dir in ".git" ".key" "templates"; do
     if [ -d "/var/fast-cli/$dir" ]; then
